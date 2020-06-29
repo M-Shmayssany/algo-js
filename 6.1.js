@@ -14,6 +14,7 @@ class Circle {
 }
 
 let circleNew = new Circle(13,13);
+console.log(circleNew);
 circleNew.move(2,2);
 console.log(circleNew);
 console.log("The surface of the circle is: " + circleNew.surface);

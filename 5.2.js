@@ -13,7 +13,6 @@ function askTvSerie(){
     myObject.Names_cast_members = [];
     let Cname = readlineSync.question("what is the name of a cast member: ");
     while (Cname != ""){
-        
         myObject.Names_cast_members.push({"name": Cname}); 
         Cname = readlineSync.question("what is the name of a cast member: ");
     }
