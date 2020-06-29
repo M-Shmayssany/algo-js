@@ -1,19 +1,26 @@
-class Circle {
-    constructor(xPos, yPos) {
-        this.xPos = xPos;
-        this.yPos = yPos;
-        this.radius = 15;
+class Rectangle {
+    constructor(topLeftXPos, topLeftYPos, width, length) {
+        this.topLeftXPos = topLeftXPos;
+        this.topLeftYPos = topLeftYPos;
+        this.width = width;
+        this.length = length;
     }
-    move(xOffset, yOffset){
-        this.xPos += xOffset;
-        this.yPos += yOffset;
-    }
-    get surface(){
-        return Math.PI * Math.pow(this.radius, 2);
-    }
+    collides(otherRectangle){
+        if (this.topLeftXPos < otherRectangle.topLeftXPos + otherRectangle.width &&
+            this.topLeftXPos + this.width > otherRectangle.topLeftXPos &&
+            this.topLeftYPos < otherRectangle.topLeftYPos + otherRectangle.length &&
+            this.topLeftYPos + this.length > otherRectangle.topLeftYPos){
+            return  true;// collision detected!
+        } else {
+            return false;// no collision detected!
+        }
+    } 
+        
 }
 
-let circleNew = new Circle(13,13);
-circleNew.move(2,2);
-console.log(circleNew);
-console.log("The surface of the circle is: " + circleNew.surface);
+
+let R1 = new Rectangle( 50, 0, 200, 200);
+let R2 = new Rectangle( 0, 50, 100, 100);
+let C = R1.collides(R2);
+console.log(C);
+
