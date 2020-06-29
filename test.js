@@ -1,4 +1,13 @@
-const readlineSync = require("readline-sync");
+let myObject = {
+    
+};
 
-let userName = readlineSync.question('Can you give me your name please?');
-console.log("Hello " + userName);
+myObject.TV_Show = "TWD";
+myObject.Cast = [];
+myObject.Cast.push({"name": "morgan"});
+
+console.log(myObject.Cast.name);
+
+console.log(myObject.Cast);
+
+console.log(myObject);
