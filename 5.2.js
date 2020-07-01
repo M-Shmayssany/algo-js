@@ -4,7 +4,7 @@ let myObject = {};
 let nextObject = {};
 
 function randomizeCast(tvSerie) {
-    tvSerie.sort(() => Math.random() - 0.5);
+    return tvSerie.sort(() => Math.random() - 0.5);
   }
 
 function askTvSerie(){
@@ -17,7 +17,7 @@ function askTvSerie(){
         Cname = readlineSync.question("what is the name of a cast member: ");
     }
 
-randomizeCast(myObject.Names_cast_members);
+
 console.log(JSON.stringify(myObject));
 
 }
@@ -26,6 +26,6 @@ askTvSerie();
 
 nextObject.name = readlineSync.question("what is the name of your next TV serie: ");
 nextObject.Production_year = readlineSync.question("what is the Production year: ");
-nextObject.Names_cast_members = [];
-nextObject.Names_cast_members.push(myObject.Names_cast_members);
+nextObject.Names_cast_members = myObject.Names_cast_members;
+randomizeCast(nextObject.Names_cast_members);
 console.log(JSON.stringify(nextObject));
