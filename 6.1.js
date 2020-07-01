@@ -1,8 +1,8 @@
 class Circle {
-    constructor(xPos, yPos) {
+    constructor(xPos, yPos, radius) {
         this.xPos = xPos;
         this.yPos = yPos;
-        this.radius = 15;
+        this.radius = radius;
     }
     move(xOffset, yOffset){
         this.xPos += xOffset;
@@ -13,7 +13,7 @@ class Circle {
     }
 }
 
-let circleNew = new Circle(13,13);
+let circleNew = new Circle(13,13,15);
 console.log(circleNew);
 circleNew.move(2,2);
 console.log(circleNew);

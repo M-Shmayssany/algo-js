@@ -1,8 +1,9 @@
 
+let i = 1;
 
-function randomizeCast() {
-    console.log(Math.random() - 0.5);
-  }
+function ext(X,Y) {
+  return X * Y;
+}
 
 
-randomizeCast();
+console.log(ext(i,3));// 
